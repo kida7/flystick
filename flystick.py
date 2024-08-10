@@ -148,7 +148,7 @@ def main():
 
         else:
             # debugging
-            print str(_output)
+            print(str(_output))
 
         prev = _output
 
