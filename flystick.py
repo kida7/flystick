@@ -27,15 +27,15 @@ import time
 try:
     import pigpio
 except ImportError as e:
-    logging.warn(e, exc_info=True)
-    logging.warn("Failed to load pigpio library, running in debug mode")
+    logging.warning(e, exc_info=True)
+    logging.warning("Failed to load pigpio library, running in debug mode")
     pigpio = None
 
 try:
     import scrollphat
 except (ImportError, IOError) as e:
-    logging.warn(e, exc_info=True)
-    logging.warn("Failed to load Scroll pHAT library, you'll be missing all the fancy graphics")
+    logging.warning(e, exc_info=True)
+    logging.warning("Failed to load Scroll pHAT library, you'll be missing all the fancy graphics")
     scrollphat = None
 
 
@@ -64,7 +64,7 @@ def render():
             try:
                 rend(value, scrollphat)
             except ValueError as e:
-                logging.warn(e, exc_info=True)
+                logging.warning(e, exc_info=True)
         scrollphat.update()
         time.sleep(.05)
 
